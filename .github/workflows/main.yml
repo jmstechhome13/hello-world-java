@@ -19,16 +19,9 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
-      - name: git version check
-        run: git --version
-      - name: java version check
-        run : java -version
-      - name: maven version check
-        run: mvn --version
-      - name: docker version check
-        run: docker version
-      - name: terraform version check
-        run: terraform --version
-      - name: nginx version check
-        run: nginx -v
+      - name: compile the code
+        run: javac HelloWorld.java
+      - name: run the java code
+        run: java HelloWorld
+
 
