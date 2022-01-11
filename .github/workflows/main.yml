@@ -19,9 +19,16 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
-      - name: Run a one-line script
-        run: echo Hello, world!
-      - name: Run a multi-line script
-        run: |
-          echo Add other actions to build,
-          echo test, and deploy your project.
+      - name: git version check
+        run: git --version
+      - name: java version check
+        run : java -version
+      - name: maven version check
+        run: mvn --version
+      - name: docker version check
+        run: docker -version
+      - name: terraform version check
+        run: terraform --version
+      - name: nginx version check
+        run: nginx --version
+
